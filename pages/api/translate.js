@@ -1,12 +1,16 @@
+import { translate } from '@vitalets/google-translate-api';
+
 export default async function handler(req, res) {
   const { from, to, text } = req.query;
-
-  const response = await fetch(
-    `https://api.pawan.krd/gtranslate?from=${from}&to=${to}&text=${encodeURIComponent(
-      text
-    )}`
-  );
-  const data = await response.json();
-
-  res.status(200).json(data);
+  
+  try {
+    const { text: translatedText } = await translate(text, { 
+      from: from, 
+      to: to 
+    });
+    
+    res.status(200).json({ translatedText });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 }

@@ -30,10 +30,7 @@ export default function Home() {
         throw new Error(`HTTP error! status: ${res.status}`);
       }
       const data = await res.json();
-      if (!data.status) {
-        throw new Error(data.message);
-      }
-      setTranslation(data.translated);
+      setTranslation(data.translatedText);
     } catch (error) {
       setError(error.message);
     }
