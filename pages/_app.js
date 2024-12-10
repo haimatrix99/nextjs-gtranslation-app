@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider theme={theme}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <Head>
-        <title>Google Translation</title>
+        <title>Google Dịch</title>
       </Head>
       <Component {...pageProps} />
     </ChakraProvider>

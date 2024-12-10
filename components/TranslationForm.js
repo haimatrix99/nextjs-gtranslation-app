@@ -153,7 +153,7 @@ export default function TranslationForm({
 }) {
   const [text, setText] = useState("");
   const [from, setFrom] = useState("en");
-  const [to, setTo] = useState("tl");
+  const [to, setTo] = useState("vi");
 
   const handleTextChange = (event) => setText(event.target.value);
   const handleFromChange = (event) => setFrom(languages[event.target.value]);
@@ -179,7 +179,7 @@ export default function TranslationForm({
       <Textarea
         value={text}
         onChange={handleTextChange}
-        placeholder="Enter text to translate"
+        placeholder="Nhập từ vào để dịch"
         marginBottom="4"
         resize="none"
       />
@@ -224,7 +224,7 @@ export default function TranslationForm({
         disabled={!text}
         marginTop="4"
       >
-        Translate
+        Dịch
       </Button>
     </Box>
   );

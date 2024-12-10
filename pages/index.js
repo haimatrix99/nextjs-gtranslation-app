@@ -48,7 +48,7 @@ export default function Home() {
       bg={bg}
       padding={6}
     >
-      <Heading>Google Translation</Heading>
+      <Heading>Google Dịch</Heading>
       <IconButton
         icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
         onClick={toggleColorMode}
